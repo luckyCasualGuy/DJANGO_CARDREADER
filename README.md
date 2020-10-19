@@ -11,6 +11,7 @@ from cmd start the server by running `python manage.py runserver`
 In the browser goto route `localhost:8000/live/detect`  
 
 **This is how the page looks like:**  
+![page](https://github.com/luckyCasualGuy/DJANGO_CARDREADER/blob/main/imgs/detection.png)
 
 ## Install IP webcam app on your phone to use mobile camera as your feed  
 [Download Link](https://play.google.com/store/apps/details?id=com.pas.webcam&hl=en_US&gl=US)
