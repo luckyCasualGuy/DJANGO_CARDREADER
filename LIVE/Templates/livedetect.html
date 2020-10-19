@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+
+{%load static%}
+
+{% block title %}
+    detector
+{% endblock title %}
+
+
+{% block content %}
+    <div class="jumbotron">
+
+        <div class="card" data-token="{{ csrf_token }}" id="MainCard">
+            <div class="row no-gutters">
+                <div class="">
+                    <img src="{%url 'LIVE:feed'%}" alt="feed" class="rounded" id='ImageFeed' data-url="{%url 'LIVE:mobile'%}">
+                </div>
+                <div id="InfoDiv">
+                    <h3 class="card-title"><strong>CONFIDENCE: </span><span class="badge badge-success" id="Value"></strong></h3>
+                    <p class="card-body">
+                        <strong>Position your card at the center fo the screen for text extraction. <br> confidence of  your card detections are shown above !! <br> If your webcam is low resolution text extraction will not be Accurate. <br>
+                        In that case you can use your mobile camera <br> In order to switch to mobile camera mode! click the button below!! <br> start your Ip-Webcam Server from mobile and insert your IP in the set box <br></strong>
+                    </p>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col-6">
+                    <div class="card-body">
+                        <h5 class="card-title">Raw Detections</h1>
+                        <p class="card-text"><pre></pre></p>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="card-body" id="">
+                        <h5 class="card-title">Raw Detections</h1>
+                        <p class="card-text" id="ExtractedText"></p>
+                    </div>
+                </div>
+            </div>
+            <div class="row no-gutters">
+                <div class="card-body">
+                    <form class="form-inline">
+                        <div class="form-group">
+                            <h2><label for="IpInput">Ip Webcam Server IP: </label></h2>
+                            <input type="text" class="form-control mx-3" id="IpInput" placeholder="192.168.0.100:8080">
+                            <button type="button" class="btn btn-light mr-3" id="IpSet">SET</button>
+                            <div>
+                                <h5>Ip set to: <span id="IP">192.168.0.100:8080</span></h5>
+                            </div>
+                        </div>
+                    </form>
+                    <button type="button" class="btn btn-light btn-lg float-right" id="ChangeButton">
+                        GO TO MOBILE FEED MODE
+                    </button>
+                    <div id="Alert" style="display: none;">
+                        <h4 style="color: #dc3545">Mobile Ip Server Ip Incorrect/Not Set/Not Running<br>If nothing works consider reloading the page!</h4>
+                    </div>
+                </div>    
+            </div>
+        </div>
+    </div>
+
+{%endblock content%}
+
+{% block script %}
+{{'static/JS/livedetect.js'}}
+{% endblock script %}

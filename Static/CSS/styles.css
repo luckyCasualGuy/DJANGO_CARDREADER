@@ -1,0 +1,21 @@
+body{
+    background-color: #4a4a4a;
+}
+
+.card{
+    background-color: #bebebe;
+}
+
+#ImageFeed{
+    width: 660px;
+    height: 500px;
+    background-color: #191919;
+    padding: 10px 10px 10px 10px;
+}
+
+#InfoDiv{
+    width: 384px;
+    height: 500px;
+    background-color: #727272;
+    padding: 10px 10px 10px 10px;
+}
